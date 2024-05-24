@@ -8,33 +8,10 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-ffunction processRegistration(event) {
-  event.preventDefault();
-  //alert('registration simulation');
-  let username = document.getElementById("username");
-  
-  let password = document.getElementById("password");
-
-  
-
-  console.log(username.value);
-''
-  localStorage.setItem("RegisteredUsers", username.value + ":" + password.value + ";");
-
-
-  // clean the verification 
-
-  username.value = "";
-
-  password.value = "";
-
-
-}
-
 function processLogin(event) {
   event.preventDefault();
-  let usernameEntered = document.getElementById("username").value;
-  let passwordEntered = document.getElementById("password").value;
+  let usernameEntered = document.getElementById("username");
+  let passwordEntered = document.getElementById("password");
 
   //alert("login simulation");
   // Retrieving data from localStorage
@@ -53,8 +30,8 @@ function processLogin(event) {
         console.log(registeredUsername);
         console.log(registeredPassword);
         if (
-          usernameEntered == registeredUsername &&
-          passwordEntered == registeredPassword
+          usernameEntered.value == registeredUsername &&
+          passwordEntered.value == registeredPassword
         ) {
           loginStatus = true;
           break;
@@ -68,4 +45,9 @@ function processLogin(event) {
     message = "no one has registered!";
   }
   alert(message);
+
+  //clean the text fields after verification
+  usernameEntered.value = "";;
+
+  passwordEntered.value = "";
 }
