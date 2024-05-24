@@ -3,18 +3,32 @@ document.addEventListener("DOMContentLoaded", function () {
   const menu = document.querySelector(".menu");
 
   mobileMenu.addEventListener("click", function () {
+    
     menu.classList.toggle("show");
   });
 });
 
-function processRegistration(event) {
+ffunction processRegistration(event) {
   event.preventDefault();
   //alert('registration simulation');
-  let username = document.getElementById("username").value;
-  let password = document.getElementById("password").value;
-  //console.log(username);
+  let username = document.getElementById("username");
+  
+  let password = document.getElementById("password");
 
-  localStorage.setItem("RegisteredUsers", username + ":" + password + ";");
+  
+
+  console.log(username.value);
+''
+  localStorage.setItem("RegisteredUsers", username.value + ":" + password.value + ";");
+
+
+  // clean the verification 
+
+  username.value = "";
+
+  password.value = "";
+
+
 }
 
 function processLogin(event) {
