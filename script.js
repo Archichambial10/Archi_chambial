@@ -8,6 +8,29 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+function processRegistration(event) {
+  event.preventDefault();
+  //alert('registration simulation');
+  let username = document.getElementById("username");
+  
+  let password = document.getElementById("password");
+
+  
+
+  console.log(username.value);
+''
+  localStorage.setItem("RegisteredUsers", username.value + ":" + password.value + ";");
+  alert("Registered successfully");
+
+  // clean the verification 
+
+  username.value = "";
+
+  password.value = "";
+
+
+}
+
 function processLogin(event) {
   event.preventDefault();
   let usernameEntered = document.getElementById("username");
