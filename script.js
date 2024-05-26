@@ -61,6 +61,9 @@ function processLogin(event) {
         }
       }
     }
+      usernameEntered.value = "";;
+
+  passwordEntered.value = "";
     message = loginStatus
       ? "login success"
       : "login failed, invalid credentials";
@@ -70,7 +73,5 @@ function processLogin(event) {
   alert(message);
 
   //clean the text fields after verification
-  usernameEntered.value = "";;
 
-  passwordEntered.value = "";
 }
